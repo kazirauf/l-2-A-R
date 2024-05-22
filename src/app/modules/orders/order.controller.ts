@@ -3,7 +3,7 @@ import { OrderValidation } from "./order.validation";
 import { OrderService } from "./order.service";
 
 
-export const OrderProduct = async (req: Request, res: Response) => {
+export const orderProduct = async (req: Request, res: Response) => {
   try {
     const product = req.body;
     const value = OrderValidation.parse(product);

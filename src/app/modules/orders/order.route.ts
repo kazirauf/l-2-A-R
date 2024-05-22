@@ -1,10 +1,10 @@
 import express from "express";
-import { OrderProduct, getOrderByEmaill } from "./order.controller";
+import { orderProduct, getOrderByEmaill } from "./order.controller";
 
 
 const route = express.Router();
 
-route.post("/", OrderProduct);
+route.post("/", orderProduct);
 route.get("/", getOrderByEmaill);
 
 export const OrderRoute = route;
