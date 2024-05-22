@@ -3,7 +3,7 @@ import { ProductService } from "./product.service";
 import { ProductValidation } from "./product.validation";
 
 
-// create product -------------------------------
+// create products
 
 export const createAProduct = async(req: Request, res: Response) => {
    try{
@@ -26,12 +26,12 @@ export const createAProduct = async(req: Request, res: Response) => {
 }
 
 
-// get all  product -------------------------------
-export const getProduct = async (req: Request, res: Response) => {
+// get  products 
+export const getProducts = async (req: Request, res: Response) => {
    try {
      const searchTerm = req.query?.searchTerm;
 
-     const result = await ProductService.getProductFromDB(searchTerm as string);
+     const result = await ProductService.getProductsFromDB(searchTerm as string);
      res.status(200).send({
        success: true,
        message: "Product Searched successfully",
@@ -46,7 +46,7 @@ export const getProduct = async (req: Request, res: Response) => {
 
 // get product by ID -------------------------------
 
-export const getProductByID = async (req: Request, res: Response) => {
+export const getProductsByID = async (req: Request, res: Response) => {
    try{
     const id = req.params.productId
     if(!id){
@@ -55,7 +55,7 @@ export const getProductByID = async (req: Request, res: Response) => {
         message: "No ID is Provided!",
       });
     }
-    const result = await ProductService.getProductByIDFromDB(id as string);
+    const result = await ProductService.getProductsByIDFromDB(id as string);
 
     res.status(200).json({
       success: true,

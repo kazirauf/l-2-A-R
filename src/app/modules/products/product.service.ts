@@ -10,7 +10,7 @@ const createAProductIntoDB = async (product: ProductInterface) => {
 };
 
 // get all product  get  method  -----------
-const getProductFromDB = async (searchTerm:string) => {
+const getProductsFromDB = async (searchTerm:string) => {
   //eslint-disable-next-line
   const filter: any = {};
   if (searchTerm) {
@@ -26,7 +26,7 @@ const getProductFromDB = async (searchTerm:string) => {
 };
 
 // get  product by ID  get  method  -----------
-const getProductByIDFromDB = async (id:string) => {
+const getProductsByIDFromDB = async (id:string) => {
   const result = await ProductModel.findById(id);
   return result;
 };
@@ -46,8 +46,8 @@ const deleteProductByIDFromDB = async (id:string) => {
 
 export const ProductService = {
   createAProductIntoDB,
-  getProductFromDB,
-  getProductByIDFromDB,
+  getProductsFromDB,
+  getProductsByIDFromDB,
   updateProductByIDFromDB,
   deleteProductByIDFromDB,
 };
