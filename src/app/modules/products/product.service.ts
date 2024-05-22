@@ -26,7 +26,7 @@ const getProductsFromDB = async (searchTerm:string) => {
 };
 
 // get  product by ID  get  method  -----------
-const getProductsByIDFromDB = async (id:string) => {
+const getProductidFromDB = async (id:string) => {
   const result = await ProductModel.findById(id);
   return result;
 };
@@ -47,7 +47,7 @@ const deleteProductByIDFromDB = async (id:string) => {
 export const ProductService = {
   createAProductIntoDB,
   getProductsFromDB,
-  getProductsByIDFromDB,
+  getProductidFromDB,
   updateProductByIDFromDB,
   deleteProductByIDFromDB,
 };

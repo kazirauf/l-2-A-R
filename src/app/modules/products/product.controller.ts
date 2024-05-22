@@ -46,7 +46,7 @@ export const getProducts = async (req: Request, res: Response) => {
 
 // get product by ID -------------------------------
 
-export const getProductsByID = async (req: Request, res: Response) => {
+export const getProductid = async (req: Request, res: Response) => {
    try{
     const id = req.params.productId
     if(!id){
@@ -55,7 +55,7 @@ export const getProductsByID = async (req: Request, res: Response) => {
         message: "No ID is Provided!",
       });
     }
-    const result = await ProductService.getProductsByIDFromDB(id as string);
+    const result = await ProductService.getProductidFromDB(id as string);
 
     res.status(200).json({
       success: true,
