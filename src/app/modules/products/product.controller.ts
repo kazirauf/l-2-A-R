@@ -112,10 +112,10 @@ export const updateProduct = async (req: Request, res: Response) => {
 
 
 
-// delete product by ID -------------------------------
+// delete product 
 
 
-export const deleteProductByID = async (req: Request, res: Response) => {
+export const deleteProduct = async (req: Request, res: Response) => {
    try{
     const id = req.params.productId;
     if(!id){
@@ -124,7 +124,7 @@ export const deleteProductByID = async (req: Request, res: Response) => {
         message: "NO ID is Provided!",
       });
     }
-    await ProductService.deleteProductByIDFromDB(id as string);
+    await ProductService.deleteProductFromDB(id as string);
 
     res.status(200).json({
       success: true,

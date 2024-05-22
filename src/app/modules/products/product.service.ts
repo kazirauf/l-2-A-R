@@ -37,7 +37,7 @@ const updateProductFromDB = async (id:string, product:ProductInterface) => {
   return result;
 };
 // delete  product by ID  get  method  -----------
-const deleteProductByIDFromDB = async (id:string) => {
+const deleteProductFromDB = async (id:string) => {
   const result = await ProductModel.deleteOne({_id : id});
   return result;
 };
@@ -49,6 +49,6 @@ export const ProductService = {
   getProductsFromDB,
   getProductidFromDB,
   updateProductFromDB,
-  deleteProductByIDFromDB,
+  deleteProductFromDB,
 };
 
