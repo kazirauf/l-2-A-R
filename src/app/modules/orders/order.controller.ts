@@ -23,7 +23,7 @@ export const orderProduct = async (req: Request, res: Response) => {
 };
 
 
-export const getOrderByEmaill = async (req: Request, res: Response) => {
+export const getOrderEmail = async (req: Request, res: Response) => {
   try {
     const {email} = req.query;
     const result = await OrderService.getOrderByEmailFromDB(email as string);
