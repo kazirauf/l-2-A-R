@@ -44,7 +44,7 @@ export const getProducts = async (req: Request, res: Response) => {
    }
 }
 
-// get product by ID -------------------------------
+// get product id
 
 export const getProductid = async (req: Request, res: Response) => {
    try{
@@ -71,10 +71,10 @@ export const getProductid = async (req: Request, res: Response) => {
    }
 }
 
-// update product by ID -------------------------------
+// update product by id
 
 
-export const updateProductByID = async (req: Request, res: Response) => {
+export const updateProduct = async (req: Request, res: Response) => {
    try{
     const id = req.params.productId;
     const product = req.body;
@@ -91,7 +91,7 @@ export const updateProductByID = async (req: Request, res: Response) => {
       });
     }
     const value = ProductValidation.parse(product);
-    await ProductService.updateProductByIDFromDB(
+    await ProductService.updateProductFromDB(
       id as string,
       value
     );

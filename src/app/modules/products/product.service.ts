@@ -32,7 +32,7 @@ const getProductidFromDB = async (id:string) => {
 };
 
 // update  product by ID  get  method  -----------
-const updateProductByIDFromDB = async (id:string, product:ProductInterface) => {
+const updateProductFromDB = async (id:string, product:ProductInterface) => {
   const result = await ProductModel.updateOne({_id : id}, product);
   return result;
 };
@@ -48,7 +48,7 @@ export const ProductService = {
   createAProductIntoDB,
   getProductsFromDB,
   getProductidFromDB,
-  updateProductByIDFromDB,
+  updateProductFromDB,
   deleteProductByIDFromDB,
 };
 
