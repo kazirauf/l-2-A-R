@@ -5,11 +5,11 @@ import { ProductValidation } from "./product.validation";
 
 // create product -------------------------------
 
-export const createProduct = async(req: Request, res: Response) => {
+export const createAProduct = async(req: Request, res: Response) => {
    try{
      const product = req.body;
      const value = ProductValidation.parse(product);
-    const result = await ProductService.createProductIntoDB(value);
+    const result = await ProductService.createAProductIntoDB(value);
 
     res.status(200).json({
       success: true,

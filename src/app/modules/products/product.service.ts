@@ -4,7 +4,7 @@ import ProductModel from "./product.model";
 
 
 // create product  post  method  -----------
-const createProductIntoDB = async (product: ProductInterface) => {
+const createAProductIntoDB = async (product: ProductInterface) => {
   const result = await ProductModel.create(product);
   return result;
 };
@@ -45,7 +45,7 @@ const deleteProductByIDFromDB = async (id:string) => {
 
 
 export const ProductService = {
-  createProductIntoDB,
+  createAProductIntoDB,
   getProductFromDB,
   getProductByIDFromDB,
   updateProductByIDFromDB,
